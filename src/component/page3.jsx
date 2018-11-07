@@ -9,7 +9,7 @@ class Page3 extends Component {
         }
     }
     componentDidMount() {
-        axios.post("/getImgList",
+        axios.post("/api/getImgList",
             {
                 CategoryId: 0,
                 sortName: "UploadTime",

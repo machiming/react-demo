@@ -79,7 +79,12 @@
   "devDependencies": {
     "redux-logger": "^3.0.6"
   },
-  "proxy": "http://newshop.zhimaaa.com/api/photoService.asmx",
+  "proxy": {
+    "/api": {
+      "target": "http://newshop.zhimaaa.com/api/photoService.asmx",
+      "changeOrigin":"true"
+    }
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
