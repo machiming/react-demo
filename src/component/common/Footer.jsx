@@ -7,7 +7,7 @@ class Footer extends Component {
         this.state = {
             nav: [
                 {id: 1, name: "首页", "icon": "icon-shouye", active: true, path: '/'},
-                {id: 2, name: "分类", "icon": "icon-wodedingdan", active: false, path: '/page1'},
+                {id: 2, name: "分类", "icon": "icon-wodedingdan", active: false, path: '/page1/page2'},
                 {id: 3, name: "购物车", "icon": "icon-gouwuche", active: false, path: '/page2'},
                 {id: 4, name: "我的", "icon": "icon-gouwuche", active: false, path: '/page3'},
             ],

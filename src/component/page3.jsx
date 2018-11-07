@@ -4,7 +4,8 @@ class Page3 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            imgList: []
+            imgList: [],
+            addClass: false
         }
     }
     componentDidMount() {
@@ -25,12 +26,25 @@ class Page3 extends Component {
             console.log(e)
         })
     }
+
+    choose = (event) => {
+        event.persist();
+        let target = event.currentTarget;
+        target.classList.add("ashow");
+        clearTimeout(t)
+        let t= setTimeout(() => {
+            target.classList.remove("ashow")
+        }, 2000);
+        this.setState({
+            addClass: true
+        });
+    };
     render() {
         return (
             <div className="page">
                 <ul className="imglist">
                     {this.state.imgList.map((v, i) => {
-                        return <li key={i}><p><img src={v}/></p></li>
+                        return <li key={i} className={this.state.addClass?'ac':'ad'} onClick={this.choose}><p><img src={v}/></p></li>
                     })}
                 </ul>
             </div>
