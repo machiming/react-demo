@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
+import Goods from "./common/Goods";
 
 class Page1 extends Component {
     constructor(props) {
@@ -7,7 +8,8 @@ class Page1 extends Component {
         console.log();
         this.state = {
             props: this.props,
-            date: 1234
+            date: 1234,
+            type:1
         }
 
     }
@@ -24,13 +26,21 @@ class Page1 extends Component {
         })
     }
 
+    change = (i) => {
+        this.setState({
+            type: i
+        })
+    };
+
     render() {
         return (
             <div className="page">
-                page1 <div>{this.state.date}</div>
-                <Link to="/page2">topage2</Link>
-                <button onClick={this.changethis}>change</button>
-                <button onClick={this.changethis2.bind(this)}>change</button>
+                <div className="dealbox">
+                    <div onClick={this.change.bind(this,1)}>1</div>
+                    <div onClick={this.change.bind(this,2)}>2</div>
+                    <div onClick={this.change.bind(this,3)}>3</div>
+                </div>
+                <Goods type={this.state.type}/>
             </div>
         );
     }
