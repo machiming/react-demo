@@ -5,11 +5,11 @@ import 'swiper/dist/css/swiper.min.css';
 class BootSwiper extends Component {
     constructor(props) {
         super(props);
-        this.state={
-            bannerList:[
-            {"img":"http://img1.shikee.com/try/2016/06/25/14244120933639105658.jpg_220x220.jpg","url":""},
-            { "img":"http://img1.shikee.com/try/2016/06/23/15395220917905380014.jpg_220x220.jpg","url":""}
-         ]
+        this.state = {
+            bannerList: [
+                {"img": "http://img1.shikee.com/try/2016/06/25/14244120933639105658.jpg_220x220.jpg", "url": ""},
+                {"img": "http://img1.shikee.com/try/2016/06/23/15395220917905380014.jpg_220x220.jpg", "url": ""}
+            ]
         }
     }
 
@@ -35,8 +35,8 @@ class BootSwiper extends Component {
             <div>
                 <div style={swiperStyle} className="swiper-container" ref="a">
                     <div className="swiper-wrapper">
-                        {this.state.bannerList.map(v=>{
-                            return <div className="swiper-slide"><a href={v.url}><img src={v.img}/></a></div>
+                        {this.state.bannerList.map((v, i) => {
+                            return <div className="swiper-slide" key={i}><a href={v.url}><img src={v.img}/></a></div>
                         })}
 
                     </div>

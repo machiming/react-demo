@@ -5,11 +5,12 @@ import Goods from "./common/Goods";
 class Page1 extends Component {
     constructor(props) {
         super(props);
-        console.log();
+        console.log(this);
+        console.log(props);
         this.state = {
             props: this.props,
             date: 1234,
-            type:1
+            type: 1
         }
 
     }
@@ -36,9 +37,9 @@ class Page1 extends Component {
         return (
             <div className="page">
                 <div className="dealbox">
-                    <div onClick={this.change.bind(this,1)}>1</div>
-                    <div onClick={this.change.bind(this,2)}>2</div>
-                    <div onClick={this.change.bind(this,3)}>3</div>
+                    <div onClick={this.change.bind(this, 1)}>1</div>
+                    <div onClick={this.change.bind(this, 2)}>2</div>
+                    <div onClick={this.change.bind(this, 3)}>3</div>
                 </div>
                 <Goods type={this.state.type}/>
             </div>

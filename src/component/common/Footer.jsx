@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import '../../assets/font/iconfont.css'
+
 class Footer extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             nav: [
                 {id: 1, name: "首页", "icon": "icon-shouye", active: true, path: '/'},
-                {id: 2, name: "分类", "icon": "icon-wodedingdan", active: false, path: '/page1/page2'},
+                {id: 2, name: "分类", "icon": "icon-wodedingdan", active: false, path: '/page1/page2/123'},
                 {id: 3, name: "购物车", "icon": "icon-gouwuche", active: false, path: '/page2'},
                 {id: 4, name: "我的", "icon": "icon-wodejuhuasuan", active: false, path: '/page3'},
             ],
@@ -31,8 +32,13 @@ class Footer extends Component {
             <div id='footer'>
                 <nav>
                     {this.state.nav.map((v, i) => {
-                        return (<Link to={v.path} key={i} onClick={this.step.bind(this, v.id)}
-                                      className={v.id === this.state.id ? "active" : ''}><i className={v.icon+' iconfont'}></i><p>{v.name}</p></Link>)
+                        return (
+                            <Link to={v.path}
+                                  key={i}
+                                  onClick={this.step.bind(this, v.id)}
+                                  className={v.id === this.state.id ? "active" : ''}>
+                                <i className={v.icon + ' iconfont'}> </i><p>{v.name}</p>
+                            </Link>)
                     })}
                 </nav>
             </div>
